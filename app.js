@@ -28,6 +28,12 @@ const port = 8080;
 // CORS middleware
 app.use(cors());
 
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require("./config/passport")(passport);
+
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
 
