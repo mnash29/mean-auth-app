@@ -3,6 +3,9 @@ const ExtractJwt = require("passport-jwt").ExtractJwt;
 const User = require("../models/users");
 const config = require("./database");
 
+/*
+ Called by app.js to build JwtStrategy for user profile access
+*/
 module.exports = function(passport) {
  let ops = {};
  ops.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("jwt");

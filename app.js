@@ -32,6 +32,7 @@ app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Anonymous passport function to build JwtStrategy
 require("./config/passport")(passport);
 
 // Set static folder
