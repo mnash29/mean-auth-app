@@ -6,6 +6,11 @@ const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const config = require("../config/database");
 
+/*
+  Mongoose document
+  Table: Users
+  Schema: name(str), email(str, req), username(str, req), password(str, req)
+*/
 const User = require("../models/users");
 
 // Register new user
