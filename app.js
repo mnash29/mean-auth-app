@@ -8,7 +8,7 @@ const users = require('./routes/users');
 const config = require("./config/database");
 
 // Connect to database
-mongoose.connect(config.database);
+mongoose.connect(config.database, { useNewUrlParser: true });
 
 // Verify connection
 mongoose.connection.on("connected", () => {
