@@ -14,13 +14,13 @@ export class AuthService {
   registerUser(user) {
     let headers = new HttpHeaders();
     headers.append('ContentType', 'application/json');
-    return this.http.post('http://54.218.118.181:8080/users/register', user, {headers: headers});
+    return this.http.post('http://localhost:8080/users/register', user, {headers: headers});
   }
   
   authenticateUser(user) {
     let headers = new HttpHeaders();
     headers.append('ContentType', 'application/json');
-    return this.http.post('http://54.218.118.181:8080/users/authenticate', user, {headers: headers});
+    return this.http.post('http://localhost:8080/users/authenticate', user, {headers: headers});
   }
   
   storeUserData(token, user) {
