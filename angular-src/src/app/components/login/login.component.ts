@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   
   onLoginSubmit() {
     if(!this.username || !this.password) {
-      this.flashMessage.show("Invalid Username or Password", {cssClass: 'alert-danger', timeout: 5000});
+      this.flashMessage.show('Invalid Username or Password', {cssClass: 'alert-danger', timeout: 5000});
       this.router.navigate(['/login']);
       return;
     }
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       if((data as any).success === true) {
         console.log((data as any).success);
         this.authService.storeUserData((data as any).token, (data as any).user);
-        this.flashMessage.show("You are now logged in.", {cssClass: 'alert-success', timeout: 3000});
+        this.flashMessage.show('You are now logged in.', {cssClass: 'alert-success', timeout: 3000});
         this.router.navigate(['/dashboard']);
       } else {
         this.flashMessage.show((data as any).msg, {cssClass: 'alert-danger', timeout: 5000});
