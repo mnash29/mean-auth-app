@@ -14,13 +14,13 @@ export class AuthService {
   registerUser(user) {
     let headers = new HttpHeaders();
     headers.append('ContentType', 'application/json');
-    return this.http.post('http://localhost:8080/users/register', user, {headers: headers});
+    return this.http.post('http://localhost:3000/users/register', user, {headers: headers});
   }
   
   authenticateUser(user) {
     let headers = new HttpHeaders();
     headers.append('ContentType', 'application/json');
-    return this.http.post('http://localhost:8080/users/authenticate', user, {headers: headers});
+    return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers});
   }
   
   storeUserData(token, user) {
@@ -28,5 +28,11 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(user));
     this.authToken = token;
     this.user = user;
+  }
+
+  logout() {
+    this.authToken = null;
+    this.user = null;
+    localStorage.clear();
   }
 }
