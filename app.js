@@ -52,6 +52,11 @@ app.get('/', (req, res) => {
   res.send('Invalid Endpoint');
 });
 
+// Make sure every route goes to index.html
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 // Start server
 app.listen(port, hostname, () => {
   console.log(`Server started on http://${hostname}:${port}/`);
